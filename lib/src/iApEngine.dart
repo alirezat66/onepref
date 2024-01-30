@@ -24,16 +24,16 @@ class IApEngine {
 
   /// A Function that launching the purchase flow dialog for a user to purchase.
   void handlePurchase(
-      ProductDetails productDetails, List<ProductId> storeProductIds) async {
+      ProductDetails productDetails, List<ProductId> storeProductIds,String? applicationUserName ) async {
     late PurchaseParam purchaseParam;
     Platform.isAndroid
         ? purchaseParam = GooglePlayPurchaseParam(
             productDetails: productDetails,
-            applicationUserName: null,
+            applicationUserName: applicationUserName,
           )
         : purchaseParam = PurchaseParam(
             productDetails: productDetails,
-            applicationUserName: null,
+            applicationUserName: applicationUserName,
           );
 
     for (var product in storeProductIds) {

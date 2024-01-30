@@ -280,7 +280,7 @@ class _MyAppState extends State<MyApp> {
                                                   } else {
                                                     iApEngine.handlePurchase(
                                                         _products[index],
-                                                        _productsIds);
+                                                        _productsIds,null);
                                                   }
                                                 },
                                                 child: const Text(
